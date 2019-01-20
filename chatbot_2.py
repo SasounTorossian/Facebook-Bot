@@ -2,7 +2,6 @@ from flask import Flask, request
 import requests
 import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
-import os, urlparse
 
 ACCESS_TOKEN = "EAAerOZBYJsuABALS43CfxhSjZBuh4RJJZBZAS7vaFJg2Mph27QRsZCNmFKpSykc3oOsLGZC3tNAQHLNzH8NuMoBECWMhDynvarvZAK3Eoy6nMQDe7BPobLfrknxFsau0ZC9gjutgvO2JmNoWABXYBZB54ZB3tK5p6NgMvTiP7O2khpTQZDZD"
 VERIFY_TOKEN = "BotTest"
