@@ -37,7 +37,7 @@ def on_message(client, obj, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect('localhost', 'mqqt://localhost:1883')
+client.connect('mqtt://cbbglhtx:DdSYU5rtvnqJ@m16.cloudmqtt.com:19274', 'mqqt://localhost:1883')
 client.loop_start()
 #Flask web server instance
 app = Flask(__name__)
