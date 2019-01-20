@@ -41,7 +41,7 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 url_str = os.environ.get('CLOUDMQTT_URL', 'mqtt://localhost:1883')
-url = urlparse.urlparse(url_str)
+url = urlparse(url_str)
 client.connect(url.hostname, url.port)
 client.loop_start()
 
