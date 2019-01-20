@@ -3,6 +3,8 @@ import requests
 import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
 import os
+from urllib.parse import urlparse
+
 
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
@@ -38,8 +40,12 @@ def on_message(client, obj, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect('mqtt://cbbglhtx:DdSYU5rtvnqJ@m16.cloudmqtt.com:19274')
+url_str = os.environ.get('CLOUDMQTT_URL', 'mqtt://localhost:1883')
+url = urlparse.urlparse(url_str)
+client.connect(url.hostname, url.port)
 client.loop_start()
+
+
 #Flask web server instance
 app = Flask(__name__)
 
