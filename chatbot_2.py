@@ -5,8 +5,7 @@ import paho.mqtt.client as mqtt
 import os, urlparse
 
 ACCESS_TOKEN = "EAAerOZBYJsuABALS43CfxhSjZBuh4RJJZBZAS7vaFJg2Mph27QRsZCNmFKpSykc3oOsLGZC3tNAQHLNzH8NuMoBECWMhDynvarvZAK3Eoy6nMQDe7BPobLfrknxFsau0ZC9gjutgvO2JmNoWABXYBZB54ZB3tK5p6NgMvTiP7O2khpTQZDZD"
-#TBD
-VERIFY_TOKEN = ""
+VERIFY_TOKEN = "BotTest"
 
 #hold sender id
 history = dict()
