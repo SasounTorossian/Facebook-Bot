@@ -2,9 +2,10 @@ from flask import Flask, request
 import requests
 import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
+import os
 
-ACCESS_TOKEN = "EAAerOZBYJsuABALS43CfxhSjZBuh4RJJZBZAS7vaFJg2Mph27QRsZCNmFKpSykc3oOsLGZC3tNAQHLNzH8NuMoBECWMhDynvarvZAK3Eoy6nMQDe7BPobLfrknxFsau0ZC9gjutgvO2JmNoWABXYBZB54ZB3tK5p6NgMvTiP7O2khpTQZDZD"
-VERIFY_TOKEN = "BotTest"
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 
 #hold sender id
 history = dict()
@@ -37,7 +38,7 @@ def on_message(client, obj, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect('mqtt://cbbglhtx:DdSYU5rtvnqJ@m16.cloudmqtt.com:19274', 'mqqt://localhost:1883')
+client.connect('mqtt://cbbglhtx:DdSYU5rtvnqJ@m16.cloudmqtt.com:19274')
 client.loop_start()
 #Flask web server instance
 app = Flask(__name__)
